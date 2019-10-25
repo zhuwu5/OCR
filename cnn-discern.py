@@ -34,10 +34,13 @@ def number_predict():
 if __name__=="__main__":
 
     start = time.time()
-    img_3 = r'D:\1\rst\7-47.jpg'
-    img = open_image(img_3)
-    pred_class,pred_idx,outputs = learn.predict(img)
-    end = time.time()
-    # print(end-start)
-    print(str(pred_class))
-    # print(+(-1))
+    dripath = r'D:\1\rst'
+    listpath = os.listdir(dripath)
+    for path in listpath:
+        img = open_image(dripath+'\\'+path)
+        pred_class,pred_idx,outputs = learn.predict(img)
+        end = time.time()
+        # print(end-start)
+        print(path)
+        print(str(pred_class))
+        # print(+(-1))
